@@ -49,14 +49,10 @@
     return;
    } else {
     var temp_html = '<li>' + name + '</li>'
+   let name = $('#input-q7').val();
+   var temp_html = '<li>' + name + '</li>'
    $('#names-q7').append(temp_html);
-   }
-   }
-   // if (name != '') { 
-   // var temp_html = '<li>' + name + '</li>'
-   // $('#names-q7').append(temp_html); }
-
-
+ }
 
  function q7_remove() {
    $('#names-q7').empty();
