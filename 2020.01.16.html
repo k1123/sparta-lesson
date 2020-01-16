@@ -1,31 +1,34 @@
 <!doctype html>
 <html lang="ko">
-  <head>
+<head>
   <meta charset="UTF-8">
-    <title>JQuery 연습하고 가기!</title>
+  <title>JQuery 연습하고 가기!</title>
 
-    <!-- JQuery를 import 합니다 -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
-    <style type="text/css">
-      div.question-box {
-        margin: 10px 0 20px 0;
-      }
+  <!-- JQuery를 import 합니다 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+  <style type="text/css">
+    div.question-box {
+      margin: 10px 0 20px 0;
+    }
 
-      h6.warning {
-      	/* 여기도 코드가 필요하겠죠? 빨간색 글씨 */
-      }
-    </style>
+    h6.warning {
+     /* 여기도 코드가 필요하겠죠? 빨간색 글씨 */
+   }
+ </style>
 
-    <script>
-      function q1(){
-        // 1. input-q1의 입력값을 가져온다.
-        // 2. 만약 입력값이 빈칸이면 if(입력값=='')
-        // 3. alert('입력하세요!') 띄우기
-        // 4. alert(입력값) 띄우기
-      }
+ <script>
+  function q1(){
+    let a = $('#input-q1').val();
+    if (a == '') {
+      alert('입력하세요!');
+    } else {
+      alert(a);
+    }
+  }
 
-      function q5(){
+
+  function q5(){
 				// 0. 일단, 소문제 미리보기의 2-4번을 꼭 해보고 아래를 읽어주세요!
       	// 1. input-q5 값을 가져온다.
       	// 2. 만약 가져온 값에 @가 있으면 (indexOf를 이용하기 - 찾아보자!)
@@ -84,4 +87,4 @@
       </ul>
     </div>
   </body>
-</html>
+  </html>
