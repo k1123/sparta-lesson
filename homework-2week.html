@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+
+	<!-- Webpage Title -->
+	<title>로얄패일블루 티세트</title>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- JS -->		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+	<style>
+
+		* {
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+
+		.main-image {    		
+			background-image: url('https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-sub_images-1557908207560_C1gZ4CF.jpg/720/720');
+			background-size: cover;
+			background-position; center;
+			width: 600px;
+			height: 600px;
+			border-radius: 10px;
+			margin: 20px auto;
+
+		}
+
+		.box {  
+			width: 600px;
+			margin: 20px auto;
+		}
+
+		.box1 {
+			text-align: center;
+		}
+
+		.t1 {
+			font-size: 40px;
+			font-weight: bold;
+		}
+
+		.orders {
+			margin-top: 100px;
+		}
+
+		#orders_box {
+			font-size: small;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+
+		function isCellPhone(p) {
+			var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})[-][0-9]{3,4}[-][0-9]{4}$/;
+			return regExp.test(p);
+		}
+
+		function order() {
+			let name = $('#order_name').val();
+			let count = $('#order_count').val();
+			let address = $('#order_address').val();
+			let phone = $('#order_phone').val();
+			
+			if (name == ''){
+				alert('이름을 입력해주세요')
+				$('#order_name').focus()
+				return
+			} else if (count == ''){
+				alert('수량을 입력해주세요')
+				$('#order_count').focus()
+				return
+			} else if (address == ''){
+				alert('주소를 입력해주세요')
+				$('#order_address').focus()
+				return
+			} else if (phone == ''){
+				alert('휴대폰번호를 입력해주세요')
+				$('#order_phone').focus()
+				return
+			} else if (!isCellPhone(phone)) {
+				alert('휴대폰번호 입력 형식이 틀립니다. \n 010-0000-0000으로 입력해주세요')
+				return
+			} else {
+				alert ('주문완료!');
+
+				var temp_html = '<tr>\
+				<td>'+name+'</td>\
+				<td>'+count+'</td>\
+				<td>'+address+'</td>\
+				<td>'+phone+'</td>\
+				</tr>';
+				$('#orders_box').append(temp_html);
+				return
+			}
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<div class="main-image"></div>
+
+	<div class="box">
+
+
+		<span class="t1">로얄패일블루 티세트</span>
+		&nbsp;
+		<span class="t2">가격: 148,000원</span>
+
+		<p>
+			로얄 페일블루 티세트는 산뜻한 파스텔 톤과 골드의 조화를 통해 누구나 쉽게 즐길 수 있도록 트렌디하게 제작한 클래식 제품입니다.
+		</p>
+
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">주문자 이름</span>
+			</div>
+			<input id="order_name" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+		</div>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<label class="input-group-text" for="inputGroupSelect01">수량</label>
+			</div>
+			<select class="custom-select" id="order_count">
+				<option selected="" value="">--수량을 선택하세요--</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+		</div>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">주소</span>
+			</div>
+			<input id="order_address" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+		</div>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">전화번호</span>
+			</div>
+			<input id="order_phone" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+		</div>
+
+
+
+		<div class="box1">
+			<button onclick="order()" type="button" class="btn btn-primary">주문하기</button>
+		</div>
+
+		<div class="orders">
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">이름</th>
+						<th scope="col">수량</th>
+						<th scope="col">주소</th>
+						<th scope="col">전화번호</th>
+					</tr>
+				</thead>
+
+				<tbody id="orders_box">
+					<tr>
+						<th scope="row">홍길동</th>
+						<td>1</td>
+						<td>서울시 강남구</td>
+						<td>010-1234-5678</td>
+					</tr>
+					<tr>
+						<th scope="row">김영희</th>
+						<td>10</td>
+						<td>경기도 성남시</td>
+						<td>010-7528-8956</td>
+					</tr>
+					<tr>
+						<th scope="row">박철수</th>
+						<td>2</td>
+						<td>서울시 서초구</td>
+						<td>010-2546-1257</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>
