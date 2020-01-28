@@ -23,30 +23,28 @@
 
   <script>
     function q1() {
-      let tbody = $('#names-q1');
-      tbody.empty();
+      let cycle_tbody = $('#names-q1');
+      cycle_tbody.empty();
 
       $.ajax({
         type: "GET",
         url: "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/bikeList/1/99",
         data: {},
         success: function(response){
-            let row = response['rentBikeStatus']['row']; // row는 리스트 //
+            var row = response['rentBikeStatus']['row']; 
             for (let i = 0; i < row.length; i++) {
-              var name = row[i]['stationName'];
-              var rack = row[i]['rackTotCnt'];
-              var parking = row[i]['parkingBikeTotCnt'];
+              var stationName = row[i]['stationName'];
+              var rackTotCnt = row[i]['rackTotCnt'];
+              var parkingBikeTotCnt = row[i]['parkingBikeTotCnt'];
               var html = '<tr>\
-              <td>' + name + '</td>\
-              <td>' + rack + '</td>\
-              <td>' + parking + '</td>\
+              <td>' + stationName + '</td>\
+              <td>' + rackTotCnt + '</td>\
+              <td>' + parkingBikeTotCnt + '</td>\
               </tr>';
-              tbody.append(html);
+              cycle_tbody.append(html);
             }
           }
-        })
-
-      
+        })   
 
     }
   </script>
