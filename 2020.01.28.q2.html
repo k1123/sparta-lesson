@@ -19,6 +19,12 @@
       padding: 10px;
       border: 1px solid;
     }
+
+    .urgent {
+      color : red;
+    }
+
+
   </style>
 
   <script>
@@ -31,20 +37,30 @@
         url: "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/bikeList/1/99",
         data: {},
         success: function(response){
-            var row = response['rentBikeStatus']['row']; 
-            for (let i = 0; i < row.length; i++) {
-              var stationName = row[i]['stationName'];
-              var rackTotCnt = row[i]['rackTotCnt'];
-              var parkingBikeTotCnt = row[i]['parkingBikeTotCnt'];
+          var row = response['rentBikeStatus']['row']; 
+          for (let i = 0; i < row.length; i++) {
+            var stationName = row[i]['stationName'];
+            var rackTotCnt = row[i]['rackTotCnt'];
+            var parkingBikeTotCnt = row[i]['parkingBikeTotCnt'];
+
+            if (parkingBikeTotCnt < 5) {
+              var html = '<tr>\
+              <td class="urgent">' + stationName + '</td>\
+              <td class="urgent">' + rackTotCnt + '</td>\
+              <td class="urgent">' + parkingBikeTotCnt + '</td>\
+              </tr>';
+            } else {
               var html = '<tr>\
               <td>' + stationName + '</td>\
               <td>' + rackTotCnt + '</td>\
               <td>' + parkingBikeTotCnt + '</td>\
               </tr>';
-              cycle_tbody.append(html);
             }
+
+            cycle_tbody.append(html);
           }
-        })   
+        }
+      })   
 
     }
   </script>
